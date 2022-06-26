@@ -6,7 +6,7 @@ const SignIn = () => {
         const { user } = await signInWithGooglePopup ();
         createUserDocumentFromAuth(user);
     };
-
+    
     return (
         <div>
             <h1>Sign In Page</h1>
@@ -15,4 +15,4 @@ const SignIn = () => {
     );
 };
 
-export default SignIn;  
+export default SignIn;
