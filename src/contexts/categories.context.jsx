@@ -7,18 +7,19 @@ import { getCollectionAndDocuments } from "../utils/firebase/firebase.utils.js";
 import SHOP_DATA from '../shop-data/shop-data.js';
 
 
-export const ProductsContext = createContext({
-    products : [],
+export const CategoriesContext = createContext({
+    CategoriesMap : {},
 });
 
-export const ProductsProvider = ({ children }) => {
+export const CategoriesProvider = ({ children }) => {
 
-    const [products, setProducts] = useState([]);
+    const [CategoriesMap, setCategoriesMap] = useState([]);
 
     useEffect(() => {
         const getCategoriesMap = async () => {
             const categoryMap = await getCollectionAndDocuments();
             console.log(categoryMap);
+            setCategoriesMap(categoryMap);
         }
 
         getCategoriesMap();
@@ -28,9 +29,9 @@ export const ProductsProvider = ({ children }) => {
     //     addCollectionAndDocuments('categories', SHOP_DATA);
     // }, []);
 
-    const value = {products};
+    const value = {CategoriesMap};
 
     return (
-        <ProductsContext.Provider value={value}> { children } </ProductsContext.Provider>
+        <CategoriesContext.Provider value={value}> { children } </CategoriesContext.Provider>
     );
 };
