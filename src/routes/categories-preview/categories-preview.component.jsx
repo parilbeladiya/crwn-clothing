@@ -11,7 +11,9 @@ const CategoriesPreview = () => {
         <Fragment>
             { Object.keys(CategoriesMap).map((title) => {
                 const products = CategoriesMap[title];
-                return  <CategoryPreview key={title} title={title} products={products} />
+                return (
+                     <CategoryPreview key={title} title={title} products={products} />
+                );
             })}
         </Fragment>
     );
