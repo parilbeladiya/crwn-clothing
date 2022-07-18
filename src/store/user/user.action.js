@@ -6,7 +6,7 @@ export const setCurrentUser = (user) =>
 
 export const checkUserSession = () => createAction(USER_ACTION_TYPE.CHECK_USER_SESSION);
 
-export const googleSignInStart = () => createAction(USER_ACTION_TYPE.CHECK_USER_SGOOGLE_SIGN_IN_STARTESSION);
+export const googleSignInStart = () => createAction(USER_ACTION_TYPE.GOOGLE_SIGN_IN_START);
 
 export const emailSignInStart = (email, password) => createAction(USER_ACTION_TYPE.EMAIL_SIGN_IN_START, { email, password });
 

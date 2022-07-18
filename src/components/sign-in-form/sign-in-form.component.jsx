@@ -27,7 +27,7 @@ const SignInForm = () => {
 
     const signInWithGoogle = async () => {
         dispatch(googleSignInStart());
-    };
+    }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
